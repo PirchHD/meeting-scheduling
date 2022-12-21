@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # meeting-scheduling
 
 Project for College

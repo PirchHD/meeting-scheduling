@@ -21,7 +21,7 @@ public class MeetingSchedulerGUI extends JFrame {
 
     private void initComponents() {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(400, 300));
+        setPreferredSize(new Dimension(800, 600));
         setLayout(new BorderLayout());
 
         listModel = new DefaultListModel<>();
@@ -54,6 +54,19 @@ public class MeetingSchedulerGUI extends JFrame {
             }
         });
         panel.add(submitButton);
+
+        JButton addButton = new JButton("Add user");
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                displayAdditionNewUser();
+            }
+        });
+        panel.add(addButton);
+
+        JButton organizeButton = new JButton("Organize meeting");
+        panel.add(organizeButton);
+
         add(panel, BorderLayout.SOUTH);
     }
 
@@ -72,6 +85,39 @@ public class MeetingSchedulerGUI extends JFrame {
         int centerY = (int)screenSize.getHeight() / 2;
         setLocation(centerX - getWidth() / 2, centerY - getHeight() / 2);
         setVisible(true);
+    }
+
+    public void displayAdditionNewUser() {
+        JFrame frame = new JFrame();
+        frame.pack();
+        frame.setSize(400, 500);
+        frame.setVisible(true);
+//        frame.setLayout(new BorderLayout());
+
+        JTextField name = new JTextField(2);
+        JTextField time = new JTextField(2);
+        JTextField duration = new JTextField(2);
+        JTextField preference = new JTextField(2);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
+        panel.add(new JLabel("Name: "));
+        panel.add(name);
+        panel.add(new JLabel("Start time: "));
+        panel.add(time);
+        panel.add(new JLabel("Duration: "));
+        panel.add(duration);
+        panel.add(new JLabel("Preference: "));
+        panel.add(preference);
+
+        JButton submitButton = new JButton("Submit");
+
+
+
+        panel.add(submitButton);
+        frame.getContentPane().add(panel);
+
+
     }
 }
 

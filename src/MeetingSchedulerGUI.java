@@ -9,12 +9,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class GUI extends JFrame {
+public class MeetingSchedulerGUI extends JFrame {
     private MeetingSchedulerAgent agent;
     private JList<String> calendarList;
     private DefaultListModel<String> listModel;
 
-    public GUI(MeetingSchedulerAgent agent) {
+    public MeetingSchedulerGUI(MeetingSchedulerAgent agent) {
         this.agent = agent;
         initComponents();
     }

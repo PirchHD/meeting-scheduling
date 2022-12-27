@@ -9,19 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MeetingSchedulerAgent extends Agent {
-    private GUI gui;;
+    private MeetingSchedulerGUI gui;;
     private List<TimeSlot> calendar;
 
 
     @Override
     protected void setup() {
         calendar = new ArrayList<>();
-        gui = new GUI(this);
+        gui = new MeetingSchedulerGUI(this);
         gui.display();
         addBehaviour(new ProposalBehaviour());
     }
 
-    public void setGUI(GUI gui) {
+    public void setGUI(MeetingSchedulerGUI gui) {
         this.gui = gui;
     }
 

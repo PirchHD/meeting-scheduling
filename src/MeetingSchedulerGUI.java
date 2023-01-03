@@ -9,6 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+/**
+ *  Klasa odpoowaidająca za Frontend
+ * */
 public class MeetingSchedulerGUI extends JFrame {
     private MeetingSchedulerAgent agent;
     private JList<String> calendarList;

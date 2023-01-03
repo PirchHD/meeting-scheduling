@@ -1,11 +1,13 @@
 package jadelab2;
 
-public class TimeSlot {
+public class TimeSlot
+{
     private int startTime;
     private int duration;
     private double preference;
 
-    public TimeSlot(int startTime, int duration, double preference) {
+    public TimeSlot(int startTime, int duration, double preference)
+    {
         this.startTime = startTime;
         this.duration = duration;
         this.preference = preference;

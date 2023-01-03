@@ -1,6 +1,5 @@
 package jadelab2;
 
-
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -9,12 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MeetingSchedulerAgent extends Agent {
-    private MeetingSchedulerGUI gui;;
+    private MeetingSchedulerGUI gui;
     private List<TimeSlot> calendar;
 
 
     @Override
-    protected void setup() {
+    protected void setup()
+    {
         calendar = new ArrayList<>();
         gui = new MeetingSchedulerGUI(this);
         gui.display();
@@ -25,7 +25,8 @@ public class MeetingSchedulerAgent extends Agent {
         this.gui = gui;
     }
 
-    private boolean isAvailable(TimeSlot timeSlot) {
+    private boolean isAvailable(TimeSlot timeSlot)
+    {
         for (TimeSlot slot : calendar) {
             if (slot.getStartTime() == timeSlot.getStartTime() && slot.getDuration() == timeSlot.getDuration()) {
                 return false;
@@ -38,7 +39,8 @@ public class MeetingSchedulerAgent extends Agent {
         return calendar;
     }
 
-    private class ProposalBehaviour extends CyclicBehaviour {
+    private class ProposalBehaviour extends CyclicBehaviour
+    {
         @Override
         public void action() {
             ACLMessage msg = receive();
